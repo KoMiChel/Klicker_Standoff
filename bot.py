@@ -6,21 +6,21 @@ from aiogram.types import ContentType
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
-# Создаем объекты бота и диспетчера
-PAYMENTS_TOKEN = "381764678:TEST:64397"
-bot = Bot(token='6667559453:AAEDtTX4WydNiLCw_Y2zRoheANQd5fNWqR4')
+# Objects bot, dispather
+PAYMENTS_TOKEN = "#"
+bot = Bot(token='#')
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
-#Запуск бота
+#run
 async def on_startup(_):
     try:
-        print("Бот запущен")
+        print("Bot running")
         sql_start()
     except sq.Error as e:
-        print(f"Во время запуска произошла ошибка: {e}")
+        print(f"Error: {e}")
 
-#Создание и коннект к таблице с профилями
+#connect to sql
 def sql_start():
     try:
         global base, cur
